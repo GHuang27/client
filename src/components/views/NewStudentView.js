@@ -35,6 +35,7 @@ const NewStudentView = (props) => {
   const {handleChange, handleSubmit } = props;
   const classes = useStyles();
 
+
   return (
     <div className={classes.root}>
       <div className={classes.formContainer}>
@@ -61,6 +62,11 @@ const NewStudentView = (props) => {
 
           <label style={{color:'#11153e', fontWeight: 'bold'}}>campusId: </label>
           <input type="text" name="campusId" onChange={(e) => handleChange(e)} />
+          <br/>
+          <br/>
+
+          <label style={{color:'#11153e', fontWeight: 'bold'}}>GPA: </label>
+          <input type="text" name="gpa" onChange={(e) => handleChange(e)} />
           <br/>
           <br/>
 
