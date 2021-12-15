@@ -16,11 +16,7 @@ class NewStudentContainer extends Component {
           campusId: null, 
           gpa: null,
           redirect: false, 
-          redirectId: null,
-          FError: "",
-          LError: "",
-          EError: "",
-          GError: "",
+          redirectId: null
         };
     }
 
