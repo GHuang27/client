@@ -4,7 +4,8 @@ const initialState = {
   students: [],
 };
 
-const campus = (state = initialState, action) => {
+//Reducer;
+const campus = (state=initialState, action) => {
   switch (action.type) {
     case FETCH_CAMPUS:
       return action.payload;
