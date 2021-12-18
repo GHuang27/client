@@ -1,4 +1,4 @@
-import React, {useState, Component} from 'react';
+import React, {useState} from 'react';
 import Button from '@material-ui/core/Button';
 
 const StudentView = (props) => {
@@ -20,7 +20,7 @@ const StudentView = (props) => {
     event.preventDefault();
     console.log("Submitted");
     
-    let temp = {
+    let student = {
         firstname: firstname,
         lastname: lastname,
         email: email,
@@ -28,27 +28,14 @@ const StudentView = (props) => {
         gpa: gpa,
         imageUrl: imageUrl
     };
-    console.log(temp);
     console.log(student);
     console.log(SID);
-    //this.props.editStudent(SID, temp);
-    /*
-    this.setState({
-      firstname: "", 
-      lastname: "", 
-      email: "",
-      imageUrl: "",
-      campusId: null, 
-      gpa: null,
-      redirect: true, 
-      redirectId: newStudent.id
-    });
-    */
+    this.props.editStudent(SID, student);
   }
 
   return (
     <div>
-      <img src={student.imageUrl} width="200" height ="200"></img>
+      <img src={student.imageUrl} alt="Student" width="200" height ="200"></img>
       <h1>{student.firstname + " " + student.lastname}</h1>
       <h2>Email: {student.email}</h2>
       <h2>GPA: {student.gpa}</h2>

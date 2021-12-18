@@ -90,6 +90,7 @@ export const deleteStudentThunk = studentId => async dispatch => {
 
 export const editStudentThunk = student => async dispatch => {
   try {
+    console.log("Called editStudentThunk");
     let updatedStudent = await axios.put(`/api/students/${student.id}`, student);
     dispatch(ac.editStudent(updatedStudent));
   } catch(err) {
