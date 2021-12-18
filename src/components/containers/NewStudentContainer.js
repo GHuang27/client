@@ -13,6 +13,7 @@ class NewStudentContainer extends Component {
           firstname: "", 
           lastname: "", 
           email: "",
+          imageUrl: "",
           campusId: null, 
           gpa: null,
           redirect: false, 
@@ -34,7 +35,8 @@ class NewStudentContainer extends Component {
             lastname: this.state.lastname,
             email: this.state.email,
             campusId: this.state.campusId,
-            gpa: this.state.gpa
+            gpa: this.state.gpa,
+            imageUrl: this.state.imageUrl
         };
         
         let newStudent = await this.props.addStudent(student);
@@ -43,6 +45,7 @@ class NewStudentContainer extends Component {
           firstname: "", 
           lastname: "", 
           email: "",
+          imageUrl: "",
           campusId: null, 
           gpa: null,
           redirect: true, 
