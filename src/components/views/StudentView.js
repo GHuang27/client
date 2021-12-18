@@ -1,6 +1,5 @@
 import React, {useState, Component} from 'react';
 import Button from '@material-ui/core/Button';
-import { editStudentThunk } from "../../store/thunks";
 
 const StudentView = (props) => {
   const { student, editStudent } = props;
@@ -29,8 +28,10 @@ const StudentView = (props) => {
         gpa: gpa,
         imageUrl: imageUrl
     };
-    
-    this.props.editStudent(SID, temp);
+    console.log(temp);
+    console.log(student);
+    console.log(SID);
+    //this.props.editStudent(SID, temp);
     /*
     this.setState({
       firstname: "", 
