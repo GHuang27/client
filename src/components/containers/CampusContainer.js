@@ -18,12 +18,27 @@ class CampusContainer extends Component {
 
   handleSubmit = async event => {
       event.preventDefault();
-
+      let tName = this.props.campus.name;
+      let tAddress = this.props.campus.address;
+      let tDescription = this.props.campus.description;
+      let tImageUrl = this.props.campus.imageUrl;
+      if(this.state.campusName) {
+        tName = this.state.campusName;
+      };
+      if(this.state.address) {
+        tAddress = this.state.address;
+      };
+      if(this.state.description) {
+        tDescription = this.state.description;
+      };
+      if(this.state.imageUrl) {
+        tImageUrl = this.state.imageUrl;
+      };
       let temp = {
-          name: this.state.campusName,
-          address: this.state.address,
-          description: this.state.description,
-          imageUrl: this.state.imageUrl,
+          name: tName,
+          address: tAddress,
+          description: tDescription,
+          imageUrl: tImageUrl,
           id: this.props.match.params.id
       };
       await this.props.editCampus(temp);

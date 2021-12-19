@@ -27,7 +27,6 @@ class NewCampusContainer extends Component {
 
     handleSubmit = async event => {
         event.preventDefault();
-
         let temp = {
             name: this.state.name,
             address: this.state.address,
