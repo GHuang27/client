@@ -8,6 +8,38 @@ class StudentContainer extends Component {
     //getting student ID from url
     this.props.fetchStudent(this.props.match.params.id);
   }
+
+  handleChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  }
+
+  handleSubmit = async event => {
+      event.preventDefault();
+
+      let temp = {
+          firstname: this.state.firstname,
+          lastname: this.state.lastname,
+          email: this.state.email,
+          campusId: this.state.campusId,
+          gpa: this.state.gpa,
+          imageUrl: this.state.imageUrl
+      };
+      console.log("Attempting to edit");
+      await this.props.editStudent(temp, 1);
+
+      this.setState({
+        firstname: "", 
+        lastname: "", 
+        email: "",
+        imageUrl: "",
+        campusId: null, 
+        gpa: null,
+        redirect: true, 
+        redirectId: this.state.id
+      });
+  }
   
   render() {
     return (
