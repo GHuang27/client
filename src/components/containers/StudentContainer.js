@@ -24,10 +24,12 @@ class StudentContainer extends Component {
           email: this.state.email,
           campusId: this.state.campusId,
           gpa: this.state.gpa,
-          imageUrl: this.state.imageUrl
+          imageUrl: this.state.imageUrl,
+          id: this.props.match.params.id
       };
       console.log("Attempting to edit");
-      await this.props.editStudent(temp, 1);
+      console.log(this.props.match.params.id);
+      await this.props.editStudent(temp);
 
       this.setState({
         firstname: "", 
