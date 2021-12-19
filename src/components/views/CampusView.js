@@ -7,6 +7,7 @@ const CampusView = (props) => {
     <div>
       <img src={campus.imageUrl} alt="Pic" width="200" height="200"></img>
       <h1>{campus.name}</h1>
+      <h2>{campus.address}</h2>
       <p>{campus.description}</p>
       <ul>
       {campus.students.map( student => {
@@ -14,7 +15,7 @@ const CampusView = (props) => {
         return (
           <li key={student.id}>
             <Link to={`/student/${student.id}`}>
-              <h1>{name}</h1>
+              {name}
             </Link>
           </li>
         );

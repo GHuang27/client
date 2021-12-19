@@ -19,7 +19,6 @@ const mapDispatch = (dispatch) => {
 */
 
 function mapDispatch (dispatch) {
-  console.log("Mapped");
   return {
     fetchAllCampuses: () => dispatch(fetchAllCampusesThunk()),
     deleteCampus: (campusId) => dispatch(deleteCampusThunk(campusId)),
@@ -28,7 +27,6 @@ function mapDispatch (dispatch) {
 
 class AllCampusesContainer extends Component {
   componentDidMount() {
-    console.log(this.props);
     this.props.fetchAllCampuses();
   }
 
