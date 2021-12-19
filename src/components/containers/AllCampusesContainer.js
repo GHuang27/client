@@ -19,10 +19,11 @@ const mapDispatch = (dispatch) => {
 */
 
 function mapDispatch (dispatch) {
+  console.log("Mapped");
   return {
     fetchAllCampuses: () => dispatch(fetchAllCampusesThunk()),
     deleteCampus: (campusId) => dispatch(deleteCampusThunk(campusId)),
-  };
+  }; 
 }
 
 class AllCampusesContainer extends Component {
