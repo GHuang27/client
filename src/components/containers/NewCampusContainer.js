@@ -29,9 +29,9 @@ class NewCampusContainer extends Component {
         event.preventDefault();
 
         let temp = {
-            name: this.state.firstname,
-            address: this.state.lastname,
-            description: this.state.email,
+            name: this.state.name,
+            address: this.state.address,
+            description: this.state.description,
             imageUrl: this.state.imageUrl
         };
         
