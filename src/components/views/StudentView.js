@@ -4,11 +4,10 @@ import Button from '@material-ui/core/Button';
 const StudentView = (props) => {
   const { student, editStudent } = props;
   let temp = "Campus unassigned.";
-  let SID = student.id;
   if(student.campus != null) {
     temp = student.campus.name;
   }
-  
+
   const [firstname, updateFName] = useState('');
   const [lastname, updateLName] = useState('');
   const [email, updateEmail] = useState('');
@@ -20,7 +19,7 @@ const StudentView = (props) => {
     event.preventDefault();
     console.log("Submitted");
     
-    let student = {
+    let updatedStudent = {
         firstname: firstname,
         lastname: lastname,
         email: email,
@@ -28,9 +27,19 @@ const StudentView = (props) => {
         gpa: gpa,
         imageUrl: imageUrl
     };
-    console.log(student);
-    console.log(SID);
-    this.props.editStudent(SID, student);
+    
+    let newStudent = await editStudent(updatedStudent);
+
+    this.setState({
+      firstname: "", 
+      lastname: "", 
+      email: "",
+      imageUrl: "",
+      campusId: null, 
+      gpa: null,
+      redirect: true, 
+      redirectId: newStudent.id
+    });
   }
 
   return (

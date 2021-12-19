@@ -31,7 +31,7 @@ const mapState = (state) => {
 const mapDispatch = (dispatch) => {
   return {
     fetchStudent: (id) => dispatch(fetchStudentThunk(id)),
-    editStudent: (id, student) => dispatch(editStudentThunk(id,student))
+    editStudent: (student) => dispatch(editStudentThunk(student)),
   };
 };
 
