@@ -17,35 +17,7 @@ class StudentContainer extends Component {
 
   handleSubmit = async event => {
       event.preventDefault();
-      console.log(this.props.student.firstname);
-      let tfn = this.props.student.firstname;
-      let tln = this.props.student.lastname;
-      let tem = this.props.student.email;
-      let tci = this.props.student.campusId;
-      let tga = this.props.student.gpa;
-      let tiu = this.props.student.imageUrl;
-      let tid = this.props.student.id;
-      if(this.state.firstname) {
-        tfn = this.state.firstname;
-      };
-      if(this.state.lastname) {
-        tln = this.state.lastname;
-      };
-      if(this.state.email) {
-        tem = this.state.email;
-      };
-      if(this.state.campusId) {
-        tci = this.state.campusId;
-      };
-      if(this.state.gpa) {
-        tga = this.state.gpa;
-      };
-      if(this.state.imageUrl) {
-        tiu = this.state.imageUrl;
-      };
-      if(this.state.imageUrl) {
-        tid = this.state.imageUrl;
-      };
+      
       let temp = {
           firstname: this.state.firstname,
           lastname: this.state.lastname,
