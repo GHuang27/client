@@ -2,8 +2,12 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchStudentThunk, editStudentThunk } from "../../store/thunks";
 import { StudentView } from "../views";
+import { Redirect } from 'react-router-dom';
 
 class StudentContainer extends Component {
+  state = {
+    redirect: false
+  }
   componentDidMount() {
     //getting student ID from url
     this.props.fetchStudent(this.props.match.params.id);
@@ -28,9 +32,13 @@ class StudentContainer extends Component {
           id: this.props.match.params.id
       };
       await this.props.editStudent(temp);
+      this.setState({redirect: true});
   }
   
   render() {
+    if(this.state.redirect) {
+      return (<Redirect to='/students' />);
+    };
     return (
       <StudentView 
         student={this.props.student}

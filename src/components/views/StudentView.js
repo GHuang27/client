@@ -16,6 +16,9 @@ const StudentView = (props) => {
       <h2>GPA: {student.gpa}</h2>
       <h3>Campus: {temp}</h3>
 
+      <h2 style={{textAlign: 'center'}}>
+        Edit Student Information
+      </h2>
       <form style={{textAlign: 'center'}} onSubmit={(e) => handleSubmit(e)}>
         <label style= {{color:'#11153e', fontWeight: 'bold'}}>First Name: </label>
         <input type="text" name="firstname" onChange ={(e) => handleChange(e)} />

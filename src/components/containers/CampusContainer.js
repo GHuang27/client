@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Redirect } from 'react-router-dom';
 import { deleteCampus } from "../../store/actions/actionCreators";
 import { 
   fetchCampusThunk, 
@@ -10,6 +11,9 @@ import {
 import { CampusView } from "../views";
 
 class CampusContainer extends Component {
+  state = {
+    redirect: false
+  }
   componentDidMount() {
     //getting campus ID from url
     this.props.fetchCampus(this.props.match.params.id);
@@ -48,6 +52,7 @@ class CampusContainer extends Component {
           id: this.props.match.params.id
       };
       await this.props.editCampus(temp);
+      this.setState({redirect: true});
   }
   /*
   handleDelete() {
@@ -67,6 +72,9 @@ class CampusContainer extends Component {
   }
   */
   render() {
+    if(this.state.redirect) {
+      return (<Redirect to='/campuses' />);
+    };
     return (
       <CampusView 
         campus={this.props.campus}

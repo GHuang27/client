@@ -3,8 +3,7 @@ import Button from '@material-ui/core/Button';
 
 const CampusView = (props) => {
   const {campus, editStudent, deleteCampus, handleChange, handleSubmit} = props;
-  console.log("Outputting students");
-  console.log(campus.students[0]);
+  
   function handleDelete(cid) {
     for(let i=0; i<campus.students.length; i++) {
       let temp = {
