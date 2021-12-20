@@ -21,7 +21,6 @@ const mapDispatch = (dispatch) => {
 function mapDispatch (dispatch) {
   return {
     fetchAllCampuses: () => dispatch(fetchAllCampusesThunk()),
-    deleteCampus: (campusId) => dispatch(deleteCampusThunk(campusId)),
   }; 
 }
 
@@ -34,7 +33,6 @@ class AllCampusesContainer extends Component {
     return (
       <AllCampusesView
         allCampuses={this.props.allCampuses}
-        deleteStudent={this.props.deleteCampus}
       />
     );
   }
