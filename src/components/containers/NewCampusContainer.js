@@ -27,11 +27,15 @@ class NewCampusContainer extends Component {
 
     handleSubmit = async event => {
         event.preventDefault();
+        let defaultImage = "https://previews.123rf.com/images/mikegreen/mikegreen1609/mikegreen160900089/67292768-school-building-icon-silhouette-vector-illustration.jpg"
+        if(this.state.imageUrl) {
+          defaultImage = this.state.imageUrl;
+        };
         let temp = {
             name: this.state.name,
             address: this.state.address,
             description: this.state.description,
-            imageUrl: this.state.imageUrl
+            imageUrl: defaultImage
         };
         
         let newCampus = await this.props.addCampus(temp);

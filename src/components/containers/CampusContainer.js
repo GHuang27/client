@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Redirect } from 'react-router-dom';
-import { deleteCampus } from "../../store/actions/actionCreators";
 import { 
   fetchCampusThunk, 
   editCampusThunk,

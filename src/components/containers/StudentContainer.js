@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchStudentThunk, editStudentThunk } from "../../store/thunks";
+import { 
+  fetchStudentThunk, 
+  editStudentThunk,
+  deleteStudentThunk } from "../../store/thunks";
 import { StudentView } from "../views";
 import { Redirect } from 'react-router-dom';
 
@@ -42,6 +45,7 @@ class StudentContainer extends Component {
     return (
       <StudentView 
         student={this.props.student}
+        deleteStudent={this.props.deleteStudent}
         handleChange = {this.handleChange} 
         handleSubmit={this.handleSubmit}  
       />
@@ -61,6 +65,7 @@ const mapDispatch = (dispatch) => {
   return {
     fetchStudent: (id) => dispatch(fetchStudentThunk(id)),
     editStudent: (student) => dispatch(editStudentThunk(student)),
+    deleteStudent: (studentId) => dispatch(deleteStudentThunk(studentId)),
   };
 };
 

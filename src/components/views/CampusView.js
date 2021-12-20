@@ -27,9 +27,11 @@ const CampusView = (props) => {
       {redir ? <Redirect to="/campuses" /> : null}
       <div>
         <img src={campus.imageUrl} alt="Pic" width="200" height="200"></img>
-        <h1>{campus.name}</h1>
-        <h2>{campus.address}</h2>
-        <p>{campus.description}</p>
+        <h1>Campus Name: {campus.name}</h1>
+        <h3>Campus Id: {campus.id}</h3>
+        <h2>Address: {campus.address}</h2>
+        <h3>Description: {campus.description}</h3>
+        <h3>Students: </h3>
         <ul>
         {campus.students.map( student => {
           let name = student.firstname + " " + student.lastname;

@@ -28,29 +28,36 @@ class NewStudentContainer extends Component {
     }
 
     handleSubmit = async event => {
-        event.preventDefault();
+      event.preventDefault();
+      let defaultI = "https://www.artworksprojects.org/wp-content/uploads/2020/06/Silhouette-Portrait-Male-520-x-576.png";
+      let defaultC = null;
+      if(this.state.imageUrl) {
+        defaultI = this.state.imageUrl;
+      };
+      if(this.state.campusId) {
+        defaultC = this.state.campusId;
+      };
+      let student = {
+          firstname: this.state.firstname,
+          lastname: this.state.lastname,
+          email: this.state.email,
+          campusId: defaultC,
+          gpa: this.state.gpa,
+          imageUrl: defaultI
+      };
+      
+      let newStudent = await this.props.addStudent(student);
 
-        let student = {
-            firstname: this.state.firstname,
-            lastname: this.state.lastname,
-            email: this.state.email,
-            campusId: this.state.campusId,
-            gpa: this.state.gpa,
-            imageUrl: this.state.imageUrl
-        };
-        
-        let newStudent = await this.props.addStudent(student);
-
-        this.setState({
-          firstname: "", 
-          lastname: "", 
-          email: "",
-          imageUrl: "",
-          campusId: null, 
-          gpa: null,
-          redirect: true, 
-          redirectId: newStudent.id
-        });
+      this.setState({
+        firstname: "", 
+        lastname: "", 
+        email: "",
+        imageUrl: "",
+        campusId: null, 
+        gpa: null,
+        redirect: true, 
+        redirectId: newStudent.id
+      });
     }
 
     componentWillUnmount() {
