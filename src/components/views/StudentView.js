@@ -30,6 +30,18 @@ const StudentView = (props) => {
           </Link>
         </h3>
         <button onClick={() => handleDelete(student.id)}>Delete Student</button>
+        <br/>
+        <br/>
+        
+        <Link to={`/campuses`}>
+        <button>Campuses</button>
+        </Link>
+        <Link to={`/students`}>
+          <button>Students</button>
+        </Link>
+        <Link to={`/`}>
+          <button>Home</button>
+        </Link>
 
         <h2 style={{textAlign: 'center'}}>
           Edit Student Information

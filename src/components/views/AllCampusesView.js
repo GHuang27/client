@@ -20,6 +20,12 @@ const AllCampusesView = (props) => {
       <Link to={`/newcampus`}>
         <button>Add New Campus</button>
       </Link>
+      <Link to={`/students`}>
+        <button>Students</button>
+      </Link>
+      <Link to={`/`}>
+        <button>Home</button>
+      </Link>
     </div>
   );
 };
