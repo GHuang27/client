@@ -1,28 +1,10 @@
 import { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { 
-  fetchAllCampusesThunk,
-  deleteCampusThunk 
-} from "../../store/thunks";
+import { fetchAllCampusesThunk } from "../../store/thunks";
 
 import { AllCampusesView } from "../views";
 
-// Map dispatch to props;
-/*
-const mapDispatch = (dispatch) => {
-  return {
-    fetchAllCampuses: () => dispatch(fetchAllCampusesThunk()),
-    deleteCampus: (campusId) => dispatch(deleteCampusThunk(campusId)),
-  };
-};
-*/
-
-function mapDispatch (dispatch) {
-  return {
-    fetchAllCampuses: () => dispatch(fetchAllCampusesThunk()),
-  }; 
-}
 
 class AllCampusesContainer extends Component {
   componentDidMount() {
@@ -45,7 +27,11 @@ const mapState = (state) => {
   };
 };
 
-
+function mapDispatch (dispatch) {
+  return {
+    fetchAllCampuses: () => dispatch(fetchAllCampusesThunk()),
+  }; 
+}
 
 // Type check props;
 AllCampusesContainer.propTypes = {

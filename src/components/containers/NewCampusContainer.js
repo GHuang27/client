@@ -51,15 +51,16 @@ class NewCampusContainer extends Component {
     }
 
     render() {
-        if(this.state.redirect) {
-          return (<Redirect to={`/campus/${this.state.redirectId}`}/>)
-        }
-        return (
-          <NewCampusView 
-            handleChange = {this.handleChange} 
-            handleSubmit={this.handleSubmit}      
-          />
-        );
+      console.log("Again");
+      if(this.state.redirect) {
+        return (<Redirect to={`/campus/${this.state.redirectId}`}/>)
+      }
+      return (
+        <NewCampusView 
+          handleChange = {this.handleChange} 
+          handleSubmit={this.handleSubmit}      
+        />
+      );
     }
 }
 
