@@ -7,11 +7,14 @@ const AllStudentsView = (props) => {
     return (
     <div>
       <p>There are no students.</p>
-      <Link to={`student/new`}>
+      <Link to={`/newstudent`}>
         <button>Add New Student</button>
       </Link>
       <Link to={`/campuses`}>
         <button>Campuses</button>
+      </Link>
+      <Link to={`/`}>
+        <button>Home</button>
       </Link>
     </div>
     );
