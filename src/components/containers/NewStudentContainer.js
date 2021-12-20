@@ -66,7 +66,7 @@ class NewStudentContainer extends Component {
 
     render() {
         if(this.state.redirect) {
-          return (<Redirect to={`/student/${this.state.redirectId}`}/>)
+          return (<Redirect to={`/students/${this.state.redirectId}`}/>)
         }
         return (
           <NewStudentView 

@@ -25,7 +25,7 @@ const StudentView = (props) => {
         <h2>Email: {student.email}</h2>
         <h2>GPA: {student.gpa}</h2>
         <h3>Campus: 
-          <Link to={`/campus/${tid}`}>
+          <Link to={`/campuses/${tid}`}>
             {temp}
           </Link>
         </h3>

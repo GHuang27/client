@@ -37,7 +37,7 @@ const CampusView = (props) => {
           let name = student.firstname + " " + student.lastname;
           return (
             <li key={student.id}>
-              <Link to={`/student/${student.id}`}>
+              <Link to={`/students/${student.id}`}>
                 {name}
               </Link>
             </li>

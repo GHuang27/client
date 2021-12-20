@@ -57,7 +57,7 @@ class NewCampusContainer extends Component {
     render() {
       console.log("Again");
       if(this.state.redirect) {
-        return (<Redirect to={`/campus/${this.state.redirectId}`}/>)
+        return (<Redirect to={`/campuses/${this.state.redirectId}`}/>)
       }
       return (
         <NewCampusView 
