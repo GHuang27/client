@@ -1,3 +1,5 @@
-# Starter code for CRUD App
+# Client 
+GHuang27 - Geoffrey Huang
 
-## Client 
+Link to server
+https://github.com/GHuang27/server
